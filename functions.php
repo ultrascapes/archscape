@@ -34,36 +34,36 @@ add_theme_support( 'customize-selective-refresh-widget' );
 add_theme_support( 'starter-content' );
 
 // Load in CSS
-function sanscape_enqueue_styles() {
+function archscape_enqueue_styles() {
     //Change time() to version number when in production
     wp_enqueue_style( 'google-font-css', "https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,400&display=swap", [], '', 'all' );
     wp_enqueue_style( 'main-css', get_stylesheet_directory_uri() . '/style.css', [], time(), 'all' ); 
     wp_enqueue_style( 'style', get_stylesheet_directory_uri() . '/css/template.css', ['google-font-css'], time(), 'all' ); 
 }
-add_action( 'wp_enqueue_scripts', 'sanscape_enqueue_styles' );
+add_action( 'wp_enqueue_scripts', 'archscape_enqueue_styles' );
 
 // Load in JS
-function sanscape_enqueue_scripts() {
+function archscape_enqueue_scripts() {
   //Change time() to version number when in production
     wp_enqueue_script( 'theme-js', get_stylesheet_directory_uri() . '/js/template.js', [], '0.1', true );
 }
-add_action( 'wp_enqueue_scripts', 'sanscape_enqueue_scripts');
+add_action( 'wp_enqueue_scripts', 'archscape_enqueue_scripts');
 
 
 // Register Menu Locations
 register_nav_menus( [
-    'top-menu' => esc_html__( 'Top Menu', 'sanscape' ),
-    'main-menu' => esc_html__( 'Main Menu', 'sanscape' ),
-    'footer-top-menu' => esc_html__( 'Footer Top Menu', 'sanscape' ),
-    'footer-main-menu' => esc_html__( 'Footer Main Menu', 'sanscape' )
+    'top-menu' => esc_html__( 'Top Menu', 'archscape' ),
+    'main-menu' => esc_html__( 'Main Menu', 'archscape' ),
+    'footer-top-menu' => esc_html__( 'Footer Top Menu', 'archscape' ),
+    'footer-main-menu' => esc_html__( 'Footer Main Menu', 'archscape' )
 ]);
 
 // Setup Widget Areas
-function sanscape_widgets_init() {
+function archscape_widgets_init() {
     register_sidebar([
-      'name'          => esc_html__( 'Home One', 'Sanscape' ),
+      'name'          => esc_html__( 'Home One', 'Archscape' ),
       'id'            => 'home-one',
-      'description'   => esc_html__( 'Add widgets for home page position one', 'Sanscape' ),
+      'description'   => esc_html__( 'Add widgets for home page position one', 'Archscape' ),
       'before_widget' => '<div class="sans-widget sans-txt-ctr">',
       'after_widget'  => '</div>',
       'before_title'  => '<h3>',
@@ -71,9 +71,9 @@ function sanscape_widgets_init() {
     ]);  
 
     register_sidebar([
-      'name'          => esc_html__( 'Footer Top', 'Sanscape' ),
+      'name'          => esc_html__( 'Footer Top', 'Archscape' ),
       'id'            => 'footer-top',
-      'description'   => esc_html__( 'Add widgets for the top of the home page', 'Sanscape' ),
+      'description'   => esc_html__( 'Add widgets for the top of the home page', 'Archscape' ),
       'before_widget' => '<div class="sans-txt-ctr">',
       'after_widget'  => '</div>',
       'before_title'  => '<h3>',
@@ -81,23 +81,23 @@ function sanscape_widgets_init() {
     ]);  
 
     register_sidebar([
-      'name'          => esc_html__( 'Posts Sidebar', 'Sanscape' ),
+      'name'          => esc_html__( 'Posts Sidebar', 'Archscape' ),
       'id'            => 'posts-sidebar',
-      'description'   => esc_html__( 'Add widgets for sidebar on post feed and pages', 'Sanscape' ),
+      'description'   => esc_html__( 'Add widgets for sidebar on post feed and pages', 'Archscape' ),
       'before_widget' => '<div class="sans-widget">',
       'after_widget'  => '</div>',
       'before_title'  => '<h3>',
       'after_title'   => '</h3>',
     ]);  
     register_sidebar([
-        'name'          => esc_html__( 'Footer Main', 'Sanscape' ),
+        'name'          => esc_html__( 'Footer Main', 'Archscape' ),
         'id'            => 'footer-main',
-        'description'   => esc_html__( 'Add widgets for Footer position one', 'Sanscape' ),
+        'description'   => esc_html__( 'Add widgets for Footer position one', 'Archscape' ),
         'before_widget' => '<div class="sans-widget">',
         'after_widget'  => '</div>',
         'before_title'  => '<h3>',
         'after_title'   => '</h3>',
       ]);  
   }
-  add_action( 'widgets_init', 'sanscape_widgets_init' );
+  add_action( 'widgets_init', 'Archscape_widgets_init' );
 
